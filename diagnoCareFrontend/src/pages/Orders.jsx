@@ -142,7 +142,7 @@ function Orders() {
               </div>
             </div>
 
-            {order.status === "COMPLETED" ? (
+            {(["COMPLETED", "REPORT_READY"].includes(order.status)) ? (
               <div className="mt-5 grid gap-3 border-t border-slate-200 pt-5 md:grid-cols-[140px_1fr_auto] md:items-end">
                 <Field label="Rating">
                   <select

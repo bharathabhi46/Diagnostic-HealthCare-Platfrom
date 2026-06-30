@@ -15,7 +15,7 @@ export const submitFeedback = async (req, res) => {
       return res.status(403).json({ message: "Not your order" });
     }
 
-    if (order.status !== "COMPLETED") {
+    if (!["COMPLETED", "REPORT_READY"].includes(order.status)) {
       return res.status(400).json({ message: "Order not completed yet" });
     }
 

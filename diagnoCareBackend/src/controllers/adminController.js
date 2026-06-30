@@ -54,9 +54,9 @@ export async function uploadReport(req, res) {
       return res.status(404).json({ message: " Order not Found" });
     }
     order.reportUrl = reportUrl;
-    order.status = "REPORT_READY";
+    order.status = "COMPLETED";
     await order.save();
-    res.json({ message: "Report uploaded Successfully", order });
+    res.json({ message: "Report uploaded successfully", order });
   } catch (error) {
     res.status(500).json({ message: "Server error", error });
   }
